@@ -17,7 +17,7 @@
     "url": "https://github.com/sebaber/Workast-Backend/issues"
   },
   "homepage": "https://github.com/sebaber/Workast-Backend#readme",
-  "dependencies": {
+  "dependencies": {     
     "express": "^4.16.4",
     "jade": "^1.11.0",
     "mongoose": "^5.5.2",
