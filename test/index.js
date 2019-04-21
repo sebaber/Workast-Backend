@@ -14,11 +14,12 @@ describe('WELCOME',function(){
 
             chai.request(app)
                 .get('/')
-                .end(function(err,res){
+                .then(res =>{
                     res.should.have.status(403);
                     res.should.have.property('type').equal('text/html');
                     done();
-                });
+                })
+                .catch(err => done(new Error(err)));
         });
     });
 
@@ -29,11 +30,12 @@ describe('WELCOME',function(){
             chai.request(app)
                 .get('/')
                 .set('Authorization', config.TOKEN_CLI)
-                .end(function(err,res){
+                .then(res =>{
                     res.should.have.status(200);
                     res.should.have.property('type').equal('text/html');
                     done();
-                });
+                })
+                .catch(err => done(new Error(err)));
         });
     });
 
@@ -44,11 +46,12 @@ describe('WELCOME',function(){
             chai.request(app)
                 .get('/pagenotexist')
                 .set('Authorization', config.TOKEN_CLI)
-                .end(function(err,res){
+                .then(res =>{
                     res.should.have.status(404);
                     res.should.have.property('type').equal('text/html');
                     done();
-                });
+                })
+                .catch(err => done(new Error(err)));
         });
     });
 });

@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config/config');
+const user = require('./routes/user');
 
 const middlewares = require('./routes/utils/middleware');
 
@@ -56,6 +57,13 @@ app.use(middlewares.validateAccess);
 app.get('/', function(req, res, next) {
   res.render('index', { title: 'Workast-Backend' });
 });
+
+app.route("/user")
+    .get(user.getUsers)
+    .post(user.postUser);
+
+app.route("/user/:id")
+    .get(user.getUser)
 
 // catch 404 and forward to error handler
 app.use(middlewares.notFound);
