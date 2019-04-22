@@ -115,14 +115,14 @@ describe('USER',function(){
                 chai.request(app)
                 .get('/user/' + user.id)
                 .set('Authorization', config.TOKEN_CLI)
-                .send(user)
-                .end(function(err, res){
+                .then(res =>{
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('name');
                     res.body.should.have.property('_id').eql(user.id);
                     done();
-                });
+                })
+                .catch(err => done(new Error(err)));
             });
         });
     });

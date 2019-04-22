@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config/config');
 const user = require('./routes/user');
+const article = require('./routes/article');
 
 const middlewares = require('./routes/utils/middleware');
 
@@ -63,7 +64,16 @@ app.route("/user")
     .post(user.postUser);
 
 app.route("/user/:id")
-    .get(user.getUser)
+    .get(user.getUser);
+
+app.route("/article")
+    .get(article.getArticles)
+    .post(article.postArticle);
+
+app.route("/article/:id")
+    .get(article.getArticle)
+    .delete(article.deleteArticle)
+    .put(article.updateArticle);
 
 // catch 404 and forward to error handler
 app.use(middlewares.notFound);
