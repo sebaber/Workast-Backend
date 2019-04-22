@@ -8,6 +8,9 @@ Workast TA Backend exercise
 
 [API Documentation in Swagger](https://app.swaggerhub.com/apis/workast-backend/workast-backend/1.0#/)
 
+### Application in Heroku
+
+[Link to application in Heroku](https://workast-backend.herokuapp.com/)
 
 ### How to run
 
@@ -25,3 +28,5 @@ Workast TA Backend exercise
 To run test:
 
 ```npm test```
+
+
