@@ -19,7 +19,9 @@ Workast TA Backend exercise
 ```npm install```
 
 3) Later, run next command to start application:
+
 ```npm start```
 
 To run test:
+
 ```npm test```
