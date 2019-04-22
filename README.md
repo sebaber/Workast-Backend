@@ -6,4 +6,4 @@ Workast TA Backend exercise
 
 ### Documentation
 
-[API Documentation in Swagger] (https://app.swaggerhub.com/apis/workast-backend/workast-backend/1.0#/)
+[API Documentation in Swagger](https://app.swaggerhub.com/apis/workast-backend/workast-backend/1.0#/)
